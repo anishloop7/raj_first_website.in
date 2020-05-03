@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Full Screen Loading</title>
+    <style type = "text/css">
+
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: "verdana", sans-serif;
+        box-sizing: border-box;
+
+      }
+      .loading_page{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0d0d0d;
+
+      }
+      .loading_page .counter{
+        width: 80%;
+        position: relative;
+        text-align: center;
+      }
+      .loading_page .counter p{
+        font-size: 85px;
+        line-height: 85px;
+        color: #f60d54;
+        text-transform: uppercase;
+
+      }
+      .loading_page .counter h1{
+        font-size: 120px;
+        line-height: 120px;
+        color: #fff;
+      }
+      .loading_page .counter hr{
+        background-color: #f60d54;
+        border: none;
+        height: 5px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      .button{
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .btn{
+        border: 1px solid #fff;
+        padding: 10px 30px;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.9s ease;
+      }
+      .btn:hover{
+        background-color: #fff;
+        color: #000;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="loading_page">
+      <div class="counter">
+        <p>loading</p>
+        <h1>0%</h1>
+        <hr/>
+      </div>
+      <div class="button">
+        <a href="login_page.html"class="btn">LETS GO</a>
+      </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var counter = 0;
+        var c = 0;
+        var i = setInterval(function(){
+          $(".loading_page .counter h1").html(c + "%");
+          $(".loading_page .counter hr").html("width",c + "%");
+          counter++;
+          c++;
+          if (counter == 101) {
+            clearInterval(i);
+          }
+        },50);
+      });
+
+    </script>
+
+  </body>
+</html>
