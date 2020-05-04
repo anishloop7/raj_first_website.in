@@ -59,3 +59,20 @@ textarea.contact-form-text{
 .contact-form-btn:hover{
   background: #6cd15c
 }
+.button{
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn{
+  border: 1px solid #fc3d3d;
+  padding: 10px 30px;
+  color: #fc3d3d;
+  text-decoration: none;
+  transition: 0.9s ease;
+}
+.btn:hover{
+  background-color: #000;
+  color: #fff;
+}
